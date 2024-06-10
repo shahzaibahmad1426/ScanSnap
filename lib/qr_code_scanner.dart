@@ -50,9 +50,12 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
             const SizedBox(
               height: 30,
             ),
-            Text(
-              '$qrResult',
-              style: const TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),
+            Padding(
+              padding: const EdgeInsets.only(left: 12, right: 12),
+              child: Text(
+                '$qrResult',
+                style: const TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),
+              ),
             ),
             const SizedBox(
               height: 30,

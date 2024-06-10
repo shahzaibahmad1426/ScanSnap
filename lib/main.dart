@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(
-              height: 40,
+              height: 30,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 12, right: 12),
