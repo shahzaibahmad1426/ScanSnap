@@ -15,6 +15,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.deepPurple,
         title: const Center(
           child: Text(

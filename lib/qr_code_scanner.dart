@@ -14,11 +14,11 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
 
   Future<void> scanQR() async {
     try {
-      final qrcode = await FlutterBarcodeScanner.scanBarcode(
+      final qrCode = await FlutterBarcodeScanner.scanBarcode(
           '#ff6666', 'Cancel', true, ScanMode.QR);
-      if (!mounted) {
+      if (mounted) {
         return setState(() {
-          qrResult = qrcode.toString();
+          this.qrResult = qrCode.toString();
         });
       }
     } on PlatformException {
@@ -30,6 +30,7 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.deepPurple,
         title: const Center(
           child: Text(
@@ -50,7 +51,7 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
               height: 30,
             ),
             Text(
-              qrResult,
+              '$qrResult',
               style: const TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),
             ),
             const SizedBox(

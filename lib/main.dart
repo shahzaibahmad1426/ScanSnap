@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scansnap/qr_code_generator.dart';
-import 'package:scansnap/qr_code_scanner.dart';
-
+import 'package:ScanSnap/qr_code_generator.dart';
+import 'package:ScanSnap/qr_code_scanner.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -52,7 +51,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(left: 12, right: 12),
               child: SizedBox(
                 width: double.infinity ,
-                height: 55,
+                height: 45,
                 child: ElevatedButton(
                   onPressed: () {
                     setState(() {
@@ -74,7 +73,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(left: 12, right: 12),
               child: SizedBox(
                 width: double.infinity ,
-                height: 55,
+                height: 45,
                 child: ElevatedButton(
                   onPressed: () {
                     setState(() {
