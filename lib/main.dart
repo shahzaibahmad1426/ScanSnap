@@ -30,13 +30,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepPurple,
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title: const Text(
-          'ScanSnap',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w600,
+        title: const Center(
+          child: Text(
+            'ScanSnap',
+            style: TextStyle(
+              fontSize: 22,
+              color: Colors.white,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ),
@@ -44,22 +48,46 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: (){
-                setState(() {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const QrCodeScanner()));
-                });
-              },
-              child: const Text('Scan the QR Code'),
+            Padding(
+              padding: const EdgeInsets.only(left: 12, right: 12),
+              child: SizedBox(
+                width: double.infinity ,
+                height: 55,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const QrCodeScanner()));
+                    });
+                  },
+                  child: const Text(
+                    'Scan the QR Code',
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
             ),
-            const SizedBox(height: 40,),
-            ElevatedButton(
-              onPressed: (){
-                setState(() {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const QrCodeGenerator()));
-                });
-              },
-              child: const Text('Scan the QR Code'),
+            const SizedBox(
+              height: 40,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 12, right: 12),
+              child: SizedBox(
+                width: double.infinity ,
+                height: 55,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const QrCodeGenerator()));
+                    });
+                  },
+                  child: const Text(
+                    'Generate the QR Code',
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
